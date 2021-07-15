@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import Vant from 'vant'
 import 'vant/lib/index.css'
+import 'lib-flexible'
 
 Vue.use(Vant)
 Vue.config.productionTip = false

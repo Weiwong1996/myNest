@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div style="font-size: 51px">
     <van-icon name="chat-o" color="#ee0a24" />
     <br>
-    学习,学个屁！
+    ces测试
   </div>
 </template>
 
