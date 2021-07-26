@@ -14,7 +14,9 @@
       </div>
     </div>
     <div class="content"></div>
-    <div class="footer"></div>
+    <div class="footer">
+      <a href="https://beian.miit.gov.cn" target="_blank">网站备案号 ：浙ICP备2021021303号-1 </a>
+    </div>
   </div>
 </template>
 
@@ -29,22 +31,31 @@ $red: red;
 .main {
   display: flex;
   flex-direction: column;
-  .top{
-    color: white;
+  width: 100%;
+
+  .top {
+    color: #F5F5F7;
     height: 65px;
     line-height: 65px;
-    background-color: black;
-    .title{
+    background-color: rgba(0, 0, 0, 0.8);
+
+    .title {
       font-size: 14px;
       display: flex;
       justify-content: center;
-      .items{
+
+      .items {
         margin: 0 100px;
         cursor: pointer;
-        div{
+        &:hover{
+          opacity: 1;
+        }
+
+        div {
           top: 50%;
           transform: translateY(15%);
-          img{
+
+          img {
             width: 40px;
             height: 40px;
           }
@@ -52,7 +63,26 @@ $red: red;
       }
     }
   }
-  .content{}
-  .footer{}
+
+  .content {
+  }
+
+  .footer {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    //color: white;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+
+    a {
+      color: #F5F5F7;
+    }
+
+    //a:visited{color:black;}
+  }
 }
 </style>
