@@ -7,28 +7,49 @@
             <img src="static/logo/logo.png">
           </div>
         </div>
-        <div class="items">HOME</div>
-        <div class="items">GALLERY</div>
-        <div class="items">ABOUT</div>
-        <div class="items">CONTACT</div>
+        <div
+          class="items"
+          v-for="(item, index) in navTitle"
+          :key="index"
+          @click="redirect(item.routeName)"
+        >{{ item.title }}</div>
       </div>
     </div>
-    <div class="content"></div>
-    <div class="footer">
-      <a href="https://beian.miit.gov.cn" target="_blank">网站备案号 ：浙ICP备2021021303号-2 </a>
+    <div class="content">
+      <router-view></router-view>
     </div>
+    <bottomInfo class="footerInfo" />
   </div>
 </template>
 
 <script>
 
+import bottomInfo from '../components/footerInfo/footerInfo'
+
 export default {
-  name: 'index'
+  name: 'index',
+  components: {
+    bottomInfo
+  },
+  data () {
+    return {
+      navTitle: [
+        // {title: 'HOME', routeName: 'home'},
+        {title: 'GALLERY', routeName: 'gallery'},
+        {title: 'ABOUT', routeName: 'about'},
+        {title: 'CONTACT', routeName: 'contact'}
+      ]
+    }
+  },
+  methods: {
+    redirect (name) {
+      this.$router.push({name: name})
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-$red: red;
 .main {
   display: flex;
   flex-direction: column;
@@ -73,26 +94,12 @@ $red: red;
   .content {
   }
 
-  .footer {
-    position: absolute;
+  .footerInfo {
     width: 100%;
     height: 40px;
     line-height: 40px;
     background-color: rgba(0, 0, 0, 0.8);
-    //color: white;
     text-align: center;
-    bottom: 0;
-    left: 0;
-
-    a {
-      color: #F5F5F7;
-      opacity: 0.8;
-      &:hover{
-        opacity: 1;
-      }
-    }
-
-    //a:visited{color:black;}
   }
 }
 </style>
