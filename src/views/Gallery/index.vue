@@ -2,7 +2,7 @@
   <div class="gallery">
     <div class="content">
       <div class="item" v-for="(item, index) in imgList" :key="index">
-        <div>
+        <div v-viewer>
           <img :src="require('@/assets/pictures/' + item)">
         </div>
         <div class="name">
