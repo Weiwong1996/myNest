@@ -6,5 +6,5 @@
 ## About This Site
 
 ``` bash
-say something
+view at weiwong.cn
 ```
