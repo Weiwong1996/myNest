@@ -3,7 +3,16 @@
     <div class="content">
       <div class="item" v-for="(item, index) in imgList" :key="index">
         <div v-viewer>
-          <img :src="require('@/assets/pictures/' + item)">
+          <van-image
+            :src="require('@/assets/pictures/' + item)"
+            fit="contain"
+            width="5rem"
+            height="5rem"
+          >
+            <template v-slot:loading>
+              <van-loading type="spinner" size="20" />
+            </template>
+          </van-image>
         </div>
         <div class="name">
           {{ item.substring(4, 8) }}
